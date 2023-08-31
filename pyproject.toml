@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "librum"
-version = "0.1.0"
+version = "0.1.1"
 description = "A Python framework for extracting data from structured files"
 authors = ["Nikolay Marinov <hello@nmrnv.com>"]
 license = "MIT"
