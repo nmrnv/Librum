@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "liber"
+version = "0.1.0"
+description = "A Python framework for extracting data from structured files"
+authors = ["Nikolay Marinov <hello@nmrnv.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pydantic = "^2.3.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.0"
+pre-commit = "^3.3.3"
+black = "^23.7.0"
+ruff = "^0.0.286"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+target-version = ["py310"]
+line_length = 76
+use_parentheses = true
+include_trailing_comma = true
+ensure_newline_before_comments = true
+
+[tool.ruff]
+ignore = ["E501"]  # Black is used to constrain line length
