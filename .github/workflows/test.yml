@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup environment
+      uses: actions/checkout@v3
+    - run: pipx install poetry
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        cache: 'poetry'
+    - run: poetry install
+
+    - name: Lint check
+      run: make lint_ci
+    - name: Run tests
+      run: make test
