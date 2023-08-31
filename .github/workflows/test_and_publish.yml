@@ -3,7 +3,7 @@ name: Test and publish to PyPI
 on:
   release:
     types:
-      - created
+      - published
 
 jobs:
   test_and_publish:
@@ -25,7 +25,7 @@ jobs:
       run: make test
 
     - name: Build package
-      run: poetry build --format sdist
+      run: poetry build
 
     - name: Publish to PyPI
       run: poetry publish
