@@ -1,0 +1,18 @@
+class _Error(BaseException):
+    ...
+
+
+class SectionError(_Error):
+    ...
+
+
+class SectionDefinitionError(SectionError):
+    ...
+
+
+class FileError(_Error):
+    ...
+
+
+class FileDefinitionError(FileError):
+    ...

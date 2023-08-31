@@ -6,7 +6,6 @@ from dataclasses import dataclass
 from collections import defaultdict
 import typing as t
 
-from liber.error import Error
 from liber.sections import (
     Line,
     Section,
@@ -23,17 +22,10 @@ from liber.patterns import (
     RE_TAGS_PATTERN,
     RE_FILE_TAG_PATTERN,
 )
+from liber.errors import FileDefinitionError, FileError
 
 Index = Count = int
 File_ = t.TypeVar("File_", bound="File")
-
-
-class FileError(Error):
-    ...
-
-
-class FileDefinitionError(FileError):
-    ...
 
 
 @dataclass

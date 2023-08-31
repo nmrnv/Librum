@@ -7,7 +7,7 @@ from collections import defaultdict
 import typing as t
 
 from liber.patterns import Pattern
-from liber.error import Error
+from liber.errors import SectionDefinitionError, SectionError
 
 Index = Count = int
 
@@ -33,10 +33,6 @@ class LineDefinition:
     optional: bool = False
     ordered: bool = True
     count: Count = 1  # -1 for unlimited
-
-
-class SectionError(Error):
-    ...
 
 
 class Section(abc.ABC):
@@ -328,10 +324,6 @@ class SectionDefinition:
             return subsections
 
         return collect_subsection_definitions(self)
-
-
-class SectionDefinitionError(SectionError):
-    ...
 
 
 class SectionDefinitionsValidator:
