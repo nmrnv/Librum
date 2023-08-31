@@ -4,8 +4,8 @@ import typing as t
 
 import pytest
 
-from liber.patterns import SEPARATOR, RE_SEPARATOR_PATTERN
-from liber.sections import Line, LineDefinition, Section, SectionError
+from librum.patterns import SEPARATOR, RE_SEPARATOR_PATTERN
+from librum.sections import Line, LineDefinition, Section, SectionError
 
 
 class SectionMock(Section):

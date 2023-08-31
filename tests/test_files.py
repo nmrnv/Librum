@@ -1,7 +1,7 @@
 import pytest
 
-from liber.patterns import SEPARATOR
-from liber.sections import (
+from librum.patterns import SEPARATOR
+from librum.sections import (
     Section,
     SectionDefinition,
     SectionPriority,

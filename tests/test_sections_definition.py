@@ -1,6 +1,6 @@
 import pytest
 
-from liber.sections import (
+from librum.sections import (
     SectionDefinition,
     SectionDefinitionsValidator,
     SectionDefinitionError,

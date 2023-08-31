@@ -3,9 +3,9 @@ import typing as t
 
 import pytest
 
-from liber.files import File
-from liber.sections import LineDefinition, Section
-from liber.patterns import RE_TAGS_PATTERN
+from librum.files import File
+from librum.sections import LineDefinition, Section
+from librum.patterns import RE_TAGS_PATTERN
 
 
 class File_(File):

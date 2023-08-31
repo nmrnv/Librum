@@ -6,8 +6,8 @@ from dataclasses import dataclass
 from collections import defaultdict
 import typing as t
 
-from liber.patterns import Pattern
-from liber.errors import SectionDefinitionError, SectionError
+from librum.patterns import Pattern
+from librum.errors import SectionDefinitionError, SectionError
 
 Index = Count = int
 

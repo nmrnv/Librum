@@ -1,14 +1,14 @@
 import pytest
 
-from liber.files import FileError
-from liber.sections import (
+from librum.files import FileError
+from librum.sections import (
     Section,
     SectionDefinition,
     LineDefinition,
     SectionError,
     SectionPriority,
 )
-from liber.patterns import SEPARATOR
+from librum.patterns import SEPARATOR
 from tests.conftest import FileMock
 from tests.conftest import (
     File_,

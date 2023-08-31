@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from collections import defaultdict
 import typing as t
 
-from liber.sections import (
+from librum.sections import (
     Line,
     Section,
     SectionDefinition,
@@ -14,7 +14,7 @@ from liber.sections import (
     SectionDefinitionsValidator,
     SectionError,
 )
-from liber.patterns import (
+from librum.patterns import (
     NEW_LINE,
     SEPARATOR,
     SEPARATOR_RAW,
@@ -22,7 +22,7 @@ from liber.patterns import (
     RE_TAGS_PATTERN,
     RE_FILE_TAG_PATTERN,
 )
-from liber.errors import FileDefinitionError, FileError
+from librum.errors import FileDefinitionError, FileError
 
 Index = Count = int
 File_ = t.TypeVar("File_", bound="File")

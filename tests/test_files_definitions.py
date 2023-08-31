@@ -3,8 +3,8 @@ from pathlib import Path
 
 import pytest
 
-from liber.files import File, FileDefinitionError, FileError
-from liber.sections import SectionDefinition, SectionDefinitionError
+from librum.files import File, FileDefinitionError, FileError
+from librum.sections import SectionDefinition, SectionDefinitionError
 from tests.conftest import HeaderSection, BodySection, FileMock
 
 
