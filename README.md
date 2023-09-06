@@ -84,7 +84,7 @@ Here, we start with the predefined section line 'Tasks'. Then we define the patt
 There are some predefined patterns in `librum/patterns.py`. The one used here is `RE_TITLE_PATTERN = r"[A-Z][\w,-:–'& ]+\w"`.
 To learn more or test regex patterns visit https://regexr.com .
 
-Every section and file can have properties where we can store the parsed information. Here, we define tasks and set it to an empty list in the initialiser.
+Every section and file can have properties where we can store the parsed information. Here, we define `tasks` and set it to an empty list in the initialiser.
 
 For every match of a line definition thereafter, `on_match` is called with the definition and the regex match object.
 We check which definition was matched, and retrieve the captured data to create a task.
@@ -107,6 +107,7 @@ Examples:
 - Estoy muy feliz (I am very happy)
 ```
 Definition:
+
 We see that the Examples are shared by both the WordSection and GrammarSection, so we can reuse them.
 ```
 EXAMPLES_LINE_DEFINITIONS = [
@@ -169,8 +170,10 @@ class WordSection(Section):
             examples=self._examples,
         )
 ```
-Each word section has a word, so we define it as a property of the section.
+Each WordSection has a word, so we define it as a property of the section.
+
 In `on_match` we extract the information, and validate it, as we do for synonyms and antonyms when checking for duplicates.
+
 Once we have matched all sections, `on_complete` is called. This is where we can use the collected data to build the Word object.
 
 
@@ -179,10 +182,10 @@ The Grammar section is similar to the WordSection, you can see it in `example/se
 
 # Defining the SpanishFile
 Once we've defined the sections, we need to define the file.
+
 Every file must have a `FILE_TAG` property, so that the parser knows what type of file it's working with.
-Then we define the `SECTION_DEFINITIONS`. They can have a different count (-1 for unlimited), can be optional, and unordered.
-We define the WordSection and GrammarSection as unordered, because one can come before the other, i.e. in a mixed order.
-We can have many words and grammar rules in the file, not just one as in the example.
+
+Then we define the `SECTION_DEFINITIONS`. They can have a different count (-1 for unlimited), can be optional, and unordered. We define the WordSection and GrammarSection as unordered, because one can come before the other, i.e. in a mixed order. We can have many words and grammar rules in the file, not just one as in the example.
 ```
 class SpanishFile(File):
     FILE_TAG = "spanish_file"
@@ -216,13 +219,13 @@ class SpanishFile(File):
         ...
 ```
 
-Files also have `on_match` and `on_complete`.
-On match, we get back the section where we can check which one it is so as to get its data.
+Files also have `on_match` and `on_complete`. In `on_match`, we get back the section where we can check which one it is so as to get its data.
 
 # How to parse the file
 File types are automatically registered when they are defined.
-If you don't know what type of file in a given path, you can use: `file = File.match(path)`
-This way it will figure out what the file is based on the file tag.
+
+If you don't know what type of file in a given path, you can use: `file = File.match(path)` This way it will figure out what the file is based on the file tag.
+
 If you do know the file type upfront, you should use `file = SpanishFile(path)`.
 
 Lastly, the file should be parsed:
@@ -231,6 +234,8 @@ try:
   file.parse()
 except (FileError, SectionError) as error:
   print(error)
+
+# Use file.tasks, file.words, file.grammar_rules
 ```
 
 ## Results
