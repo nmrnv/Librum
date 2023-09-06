@@ -13,7 +13,7 @@ from example.models import Task, Example, Word, GrammarRule
 
 class HeaderSection(Section):
     LINE_DEFINITIONS = [
-        LineDefinition("Learning Spanish"),
+        LineDefinition("^Learning Spanish$"),
         LineDefinition(RE_TAGS_PATTERN),
     ]
 
@@ -23,7 +23,7 @@ class HeaderSection(Section):
 
 class TasksSection(Section):
     LINE_DEFINITIONS = [
-        LineDefinition("Tasks"),
+        LineDefinition("^Tasks$"),
         LineDefinition(rf"- \[(x| )\] ({RE_TITLE_PATTERN})", count=-1),
     ]
 
