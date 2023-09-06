@@ -22,6 +22,7 @@ RE_DATE_PATTERN = (
 RE_TITLE_PATTERN = r"[A-Z][\w,-:–'& ]+\w"
 RE_SENTENCE_PATTERN = r"[A-Z][\w,-:–'& ]+\w[\.\!\?]"
 RE_QUESTION_PATTERN = r"[A-Z][\w,-:–'& ]+\w\?"
+RE_CAPITALISED_WORD_PATTERN = r"[A-Z][a-z-]+"
 
 RE_FILE_TITLE_PATTERN = r"^## ([A-Z][\w,-:–'& ]+\w)$"
 RE_FILE_TAG_PATTERN = r"^([a-z]{2,}_)+file$"

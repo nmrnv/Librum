@@ -4,7 +4,7 @@
 POETRY = poetry run
 
 test:
-	${POETRY} pytest -s .
+	${POETRY} pytest -s ${ARGS}
 
 precommit_init:
 	${POETRY} pre-commit install

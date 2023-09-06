@@ -1,0 +1,19 @@
+Learning Spanish
+`[spanish_file]`
+
+Tasks
+- [x] Establish a study schedule
+- [ ] Find a teacher
+
+W) Feliz
+Meaning: Happy
+Synonyms: Contento, Alegre
+Antonyms: Triste
+Examples:
+- Estoy muy feliz (I am very happy)
+
+G) Ser vs estar
+'Ser' relates to essence or identity, while 'estar' relates to state or condition.
+Examples:
+- Ella es profesora (She is a teacher)
+- Ella está cansada (She is tired)

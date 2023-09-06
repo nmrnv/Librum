@@ -6,7 +6,7 @@ from dataclasses import dataclass
 from collections import defaultdict
 import typing as t
 
-from librum.patterns import Pattern
+from librum.patterns import Pattern, SEPARATOR_RAW, RE_SEPARATOR_PATTERN
 from librum.errors import SectionDefinitionError, SectionError
 
 Index = Count = int
@@ -98,6 +98,11 @@ class Section(abc.ABC):
 
         last_definition = cls.LINE_DEFINITIONS[-1]
         is_last_definition_unlimited = last_definition.count == -1
+        if is_last_definition_unlimited and not re.match(
+            last_definition.pattern, SEPARATOR_RAW
+        ):
+            cls.END_PATTERN = RE_SEPARATOR_PATTERN
+
         if cls.END_PATTERN and not (
             last_definition.optional or is_last_definition_unlimited
         ):
