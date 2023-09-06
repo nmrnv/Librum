@@ -1,5 +1,10 @@
 # Librum
+![Tests](https://github.com/nmrnv/Librum/actions/workflows/test.yml/badge.svg)
+
 A Python framework for extracting data and validating structured files.
+
+### Installation
+Add `librum` to pip or poetry.
 
 # Usage (code with imports can be found in `example/`)
 Suppose you're learning Spanish and you've defined your own structured file to write down tasks, words, and grammar rules:
